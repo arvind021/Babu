@@ -1,0 +1,17 @@
+[Unit]
+Description=TG Lookup Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/tg_lookup_bot
+Environment="BOT_TOKEN=YOUR_BOT_TOKEN"
+Environment="API_KEY=YOUR_API_KEY"
+Environment="OWNER_ID=YOUR_TELEGRAM_ID"
+ExecStart=/usr/bin/python3 /root/tg_lookup_bot/bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
