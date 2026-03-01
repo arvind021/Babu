@@ -613,6 +613,13 @@ async def perform_lookup(update: Update, ctx: ContextTypes.DEFAULT_TYPE, query: 
         else:
             await safe_edit(msg, text, reply_markup=kb)
 
+        # Send raw JSON data
+        import json as _json
+        json_text = _json.dumps(data, indent=2, ensure_ascii=False)
+        chunks = [json_text[i:i+4000] for i in range(0, len(json_text), 4000)]
+        for chunk in chunks:
+            await reply_fn("<pre><code>" + chunk + "</code></pre>", parse_mode=HTML)
+
         # Warn on last lookup
         if rem_after == 0:
             u = get_user(user_id)
@@ -698,6 +705,15 @@ async def perform_phone_lookup(update: Update, ctx: ContextTypes.DEFAULT_TYPE, n
 
         text = format_phone_result(data, number, rem_after)
         await safe_edit(msg, text, reply_markup=phone_result_kb())
+
+        # Send raw JSON data
+        import json as _json
+        json_text = _json.dumps(data, indent=2, ensure_ascii=False)
+        chunks = [json_text[i:i+4000] for i in range(0, len(json_text), 4000)]
+        phone_reply = (update.message.reply_text if update.message
+                       else update.callback_query.message.reply_text)
+        for chunk in chunks:
+            await phone_reply("<pre><code>" + chunk + "</code></pre>", parse_mode=HTML)
 
         if rem_after == 0:
             u = get_user(user_id)
