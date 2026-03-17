@@ -23,7 +23,7 @@ API_KEY        = os.getenv("API_KEY")   # tg-to-num API key (e.g. "Ansh")
 OWNER_ID       = int(os.getenv("OWNER_ID"))
 OWNER_USERNAME = "l_Smoke_ll"
 MONGO_URI      = os.getenv("MONGO_URI", "mongodb+srv://yb131567_db_user:R8zxuvc9Qn999Arg@cluster0.drjaxl8.mongodb.net/telegram_bot?retryWrites=true&w=majority")
-SUPPORT_GROUP  = "https://t.me/+your_support_group_link"   # ← apna link dalo
+SUPPORT_GROUP  = "https://t.me/datalelo"   # ← apna link dalo
 LOG_GROUP_ID   = int(os.getenv("LOG_GROUP_ID", "0"))        # ← apna log group ID dalo (e.g. -1001234567890)
 API_BASE       = "https://tg-to-num-six.vercel.app/"
 PHONE_API_BASE = "https://num-to-info-ten.vercel.app/"
