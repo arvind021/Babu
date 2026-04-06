@@ -359,7 +359,7 @@ async def fetch_info(query: str) -> dict:
     async with aiohttp.ClientSession() as s:
         async with s.get(API_BASE, params={"key": API_KEY, "q": query}, timeout=timeout) as r:
             if r.status != 200:
-                return {"success": False, "message": f"API Error {r.status}"}
+                return {"success": False, "message": "Send User ID"}
             return await r.json(content_type=None)
 
 async def fetch_phone_info(number: str) -> dict:
