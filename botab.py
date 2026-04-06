@@ -25,7 +25,7 @@ OWNER_USERNAME = "l_Smoke_ll"
 MONGO_URI      = os.getenv("MONGO_URI", "mongodb+srv://yb131567_db_user:R8zxuvc9Qn999Arg@cluster0.drjaxl8.mongodb.net/telegram_bot?retryWrites=true&w=majority")
 SUPPORT_GROUP  = "https://t.me/+6JT140NC2VtkODk1"
 LOG_GROUP_ID   = int(os.getenv("LOG_GROUP_ID", "0"))
-API_BASE       = "https://tg-to-num-six.vercel.app/"
+API_BASE       = "https://pan-seven-eta.vercel.app/"
 PHONE_API_BASE = "https://num-to-info-ten.vercel.app/"
 PAK_API_BASE   = "https://rehu-pak-info.vercel.app/api/lookup"   # 🇵🇰 NEW
 FREE_USES      = 2
